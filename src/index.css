@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --color-ink: #12233a;
+  --color-paper: #f6f8fb;
+  --color-cobalt: #2f5bff;
+  --color-marigold: #ffb800;
+}
+
+body { @apply bg-paper text-slate-700 antialiased; }
+
+@keyframes blink { 50% { opacity: 0; } }
+.caret::after { content: ''; display: inline-block; width: 2px; height: 1.1em; margin-left: 2px; vertical-align: text-bottom; background: var(--color-cobalt); animation: blink 1s steps(1) infinite; }
+.caret-gold::after { background: var(--color-marigold); }
+@media (prefers-reduced-motion: reduce) { .caret::after { animation: none; } }
