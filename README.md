@@ -1,24 +1,20 @@
-# QuillAI frontend
+# QuillAI — Frontend UI
+A fast, responsive single-page application built with React, Vite, and Tailwind CSS v4. Designed as the primary interface for QuillAI, it seamlessly connects to the backend API to render real-time, streaming text completions powered by Google Gemini.
 
-React (Vite) + Tailwind CSS v4 single-page app. Talks to the QuillAI backend and renders Gemini output as it streams in.
+# Key Features
+Real-Time SSE Streaming: Native client-side consumption of Server-Sent Events to render AI responses as they generate word-by-word.
 
-## Run locally
-```bash
-npm install
-cp .env.example .env   # VITE_API_URL points at the backend
-npm run dev
-```
+Modern UI & Design System: Styled with Tailwind CSS v4 for a clean, minimalist, and fully responsive user interface.
 
-## Push to GitHub
-```bash
-git init && git add . && git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<your-username>/quillai-frontend.git
-git push -u origin main
-```
+Prompt & History View: View past prompts and responses synced across sessions.
 
-## Deploy on Netlify
-1. Netlify: **Add new site > Import an existing project**, pick the `quillai-frontend` repo.
-2. Build command `npm run build`, publish directory `dist`.
-3. Site configuration > Environment variables: `VITE_API_URL` = your Render backend URL (no trailing slash).
-4. Deploy, then put the Netlify URL into the backend's `CLIENT_URL` on Render so CORS allows it.
+Secure Authentication: Built-in login and user registration flows backed by persistent JWT session handling.
+
+# Tech Stack
+Framework: React 18 (Vite)
+
+Styling: Tailwind CSS v4
+
+HTTP & Streaming: Native EventSource / Fetch API & Axios
+
+Routing: React Router
